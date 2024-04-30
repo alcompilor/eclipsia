@@ -5,7 +5,8 @@
   "main": "rpc.js",
   "type": "module",
   "scripts": {
-    "start": "node rpc.js"
+    "start": "node rpc.js",
+    "test": "vitest"
   },
   "repository": {
     "type": "git",
@@ -21,5 +22,8 @@
   "dependencies": {
     "express": "^4.19.2",
     "helmet": "^7.1.0"
+  },
+  "devDependencies": {
+    "vitest": "^1.5.3"
   }
 }
