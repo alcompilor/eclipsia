@@ -1,0 +1,24 @@
+{
+  "name": "eclipsia",
+  "version": "1.0.0",
+  "description": "A Node.js-based blockchain prototype, developed as a student project at @Medieinstitutet.",
+  "main": "rpc.js",
+  "type": "module",
+  "scripts": {
+    "start": "node rpc.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alcompilor/eclipsia.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alcompilor/eclipsia/issues"
+  },
+  "homepage": "https://github.com/alcompilor/eclipsia#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
