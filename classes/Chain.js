@@ -2,8 +2,9 @@ import Block from "./Block.js";
 import Transaction from "./Transaction.js";
 
 class Chain {
-    constructor(difficulty) {
+    constructor(difficulty, newBlockIntervalInSeconds) {
         this.difficulty = difficulty;
+        this.newBlockInterval = newBlockIntervalInSeconds;
         this.blocks = [this.initGenesisBlock()];
     }
 
@@ -21,6 +22,14 @@ class Chain {
         const block = new Block(transactions, this.lastBlock().hash);
         block.mine(this.difficulty);
         this.blocks.push(block);
+    }
+
+    timeSinceLastBlock = (inSeconds = true) => {
+        const latestBlockTimestamp = this.lastBlock().timestamp;
+        const currentTimestamp = Date.now();
+
+        const timeElapsed = currentTimestamp - latestBlockTimestamp;
+        return inSeconds ? timeElapsed / 1000 : timeElapsed;
     }
 }
 
