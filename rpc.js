@@ -7,7 +7,7 @@ import { errorHandler } from "./middlewares/errorHandler.js";
 
 const PORT = 7185;
 const rpc = express();
-let eclipsia;
+export let eclipsia;
 
 // Assign necassary middlewares
 rpc.use(express.json());
