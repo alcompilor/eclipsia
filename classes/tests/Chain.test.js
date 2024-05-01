@@ -6,7 +6,7 @@ import Transaction from "../Transaction.js";
 describe("Block.js Unit Tests", () => {
     let chain;
     beforeAll(() => {
-        chain = new Chain(4);
+        chain = new Chain(4, 60 * 5);
     });
 
     it("Should init a genesis block", () => {
@@ -26,5 +26,13 @@ describe("Block.js Unit Tests", () => {
 
     it("Should get latest block", () => {
         expect(chain.lastBlock().transactions[0].payload).toEqual("testing");
+    });
+
+    it("Should get the time elapsed since last block", () => {
+        expect(chain.timeSinceLastBlock()).toBeDefined();
+    })
+
+    it("Should have a set interval for new blocks - in Seconds", () => {
+        expect(chain.newBlockInterval).toEqual(60 * 5);
     });
 });
