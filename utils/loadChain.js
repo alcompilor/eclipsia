@@ -9,7 +9,7 @@ const __dirname = dirname(__filename);
 const filePath = join(resolve(__dirname, '..'), 'data/eclipsia.json');
 
 export const loadChain = () => {
-    let eclipsia = new Chain(4);
+    let eclipsia = new Chain(4, 60 * 5);
 
     if (fs.existsSync(filePath)) {
         const data = fs.readFileSync(filePath);
